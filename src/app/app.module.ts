@@ -1,3 +1,4 @@
+import { IconChooser } from './../components/icon-chooser/icon-chooser';
 import { GameModule } from './../pages/game/game.module';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,12 +19,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    IconChooser
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    GameModule
+    GameModule,
+    BrowserModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -31,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    IconChooser
   ],
   providers: [
     StatusBar,
