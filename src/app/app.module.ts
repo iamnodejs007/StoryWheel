@@ -1,3 +1,5 @@
+import { CircleProgressBar } from './../components/circle-progress-bar/circle-progress-bar';
+import { HttpModule } from '@angular/http';
 import { IconChooser } from './../components/icon-chooser/icon-chooser';
 import { GameModule } from './../pages/game/game.module';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -20,13 +22,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    IconChooser
+    IconChooser,
+    CircleProgressBar
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     GameModule,
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    IconChooser
+    IconChooser,
+    CircleProgressBar
   ],
   providers: [
     StatusBar,
