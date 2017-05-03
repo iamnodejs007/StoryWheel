@@ -1,10 +1,14 @@
-#svg circle {
-    stroke-dashoffset: 0;
-    transition: stroke-dashoffset 1s linear;
-    stroke: #666;
-    stroke-width: 1em;
-}
-
-#svg #bar {
-    stroke: #FF9F1E;
+#svg {
+    circle {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 1s linear;
+        stroke: #666;
+        //stroke-width: 1em;
+    }
+    #bar {
+        stroke: #FF9F1E;
+    }
+    .inner {
+        stroke-width: 0;
+    }
 }
