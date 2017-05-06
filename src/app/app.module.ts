@@ -1,3 +1,4 @@
+import { PlayerSelector } from './../components/player-selector/player-selector';
 import { CircleProgressBar } from './../components/circle-progress-bar/circle-progress-bar';
 import { HttpModule } from '@angular/http';
 import { IconChooser } from './../components/icon-chooser/icon-chooser';
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     IconChooser,
-    CircleProgressBar
+    CircleProgressBar,
+    PlayerSelector
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     IconChooser,
-    CircleProgressBar
+    CircleProgressBar,
+    PlayerSelector
   ],
   providers: [
     StatusBar,
