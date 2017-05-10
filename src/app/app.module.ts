@@ -1,3 +1,4 @@
+import { SymbolService } from './../services/symbol.service';
 import { PlayerSelector } from './../components/player-selector/player-selector';
 import { CircleProgressBar } from './../components/circle-progress-bar/circle-progress-bar';
 import { HttpModule } from '@angular/http';
