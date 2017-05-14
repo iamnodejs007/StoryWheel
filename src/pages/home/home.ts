@@ -1,4 +1,4 @@
-import { IconEngineConfiguration } from './../../components/icon-engine/icon-engine-configuration';
+import { IconEngineConfiguration, PlayerConfig } from './../../components/icon-engine/icon-engine-configuration';
 import { Game } from './../game/game';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -27,7 +27,7 @@ export class HomePage {
   } as IconEngineConfiguration;
 
   constructor(public navCtrl: NavController) {
-
+    this.iconConfiguration.playerClick = (aa: PlayerConfig) => { console.log('player click ' + aa.name);}
   }
 
   public startGame() {

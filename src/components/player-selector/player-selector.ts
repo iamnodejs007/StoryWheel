@@ -1,5 +1,5 @@
 import { PlayerConfig } from './../icon-engine/icon-engine-configuration';
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 /**
  * Generated class for the PlayerSelector component.
@@ -15,6 +15,9 @@ export class PlayerSelector {
 
   @Input()
   public players: PlayerConfig[] = [];
+
+  @Output()
+  public playerClick: EventEmitter<PlayerConfig> = new EventEmitter<PlayerConfig>();
 
   public playersData: Player[] = [];
   private radius1: number = 1;
@@ -52,6 +55,10 @@ export class PlayerSelector {
 
       return result;
     });
+  }
+
+  public playerSelect(player: Player) {
+    this.playerClick.emit(player.player);
   }
 
   private createPath(cumulativePercent: number, percent: number, radius: number, innerRadius: number): string {

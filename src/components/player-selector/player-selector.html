@@ -5,9 +5,12 @@
                 <path *ngFor="let player of playersData" [attr.d]="player.pathInner" [attr.fill]="player.color" [id]="player.name + 'Inner'"></path>
                 <path *ngFor="let player of playersData" [attr.d]="player.pathOuter" [attr.fill]="shadeBlend(0.5,player.color)" [id]="player.name + 'Outer'"></path>
             </defs>
-            <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.name + 'Outer'"/>
+            <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.name + 'Outer'"
+            (click)="playerSelect(player)"/>
             <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.name + 'Inner'"/>
-            <text *ngFor="let player of playersData" font-family="Verdana" font-size="0.1">
+            <text *ngFor="let player of playersData" 
+            (click)="playerSelect(player)"
+            font-family="Verdana" font-size="0.1">
               <textPath [attr.xlink:href]="'#'+player.name + 'Inner'" startOffset="25%" style="text-anchor: middle;">
                 {{player.name}}
               </textPath>

@@ -2,7 +2,7 @@ export class IconEngineConfiguration {
     public nextIcon: boolean;
     public previousIcon: boolean;
     public players: PlayerConfig[];
-    public playerClick: (any) => void;
+    public playerClick: (PlayerConfig) => void;
     public showText: boolean;
     public turnTime: number;
 }
