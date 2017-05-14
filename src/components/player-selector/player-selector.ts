@@ -12,6 +12,8 @@ import { Component, Input } from '@angular/core';
 })
 export class PlayerSelector {
 
+  public test:string = 'aa';
+
   @Input()
   public players: Player[] = [
     {
@@ -40,6 +42,7 @@ export class PlayerSelector {
 
 
     this.setupPlayers();
+    //this.test = this.createPath(0, 50, 0.8, 0.7);
   }
 
   private setupPlayers() {

@@ -12,8 +12,7 @@ import { SymbolDetail } from "../../models/symbol-detail";
  */
 @Component({
   selector: 'icon-chooser',
-  templateUrl: 'icon-chooser.html',
-  providers: [SymbolService]
+  templateUrl: 'icon-chooser.html'
 })
 export class IconChooser {
 

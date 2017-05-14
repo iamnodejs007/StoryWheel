@@ -8,7 +8,7 @@
             <use *ngFor="let player of players" [attr.xlink:href]="'#'+player.name + 'Outer'"/>
             <use *ngFor="let player of players" [attr.xlink:href]="'#'+player.name + 'Inner'"/>
             <text *ngFor="let player of players" font-family="Verdana" font-size="0.1">
-              <textPath [attr.xlink:href]="'#'+player.name + 'Inner'">
+              <textPath [attr.xlink:href]="'#'+player.name + 'Inner'" startOffset="25%" style="text-anchor: middle;">
                 {{player.name}}
               </textPath>
           </text>

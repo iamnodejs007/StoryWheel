@@ -1,4 +1,7 @@
-import { SymbolService } from './../services/symbol.service';
+import { IconEngine } from './../components/icon-engine/icon-engine';
+import { IconText } from './../components/icon-text/icon-text';
+import { SymbolDetail } from './../models/symbol-detail';
+import { IconControls } from './../components/icon-controls/icon-controls';
 import { PlayerSelector } from './../components/player-selector/player-selector';
 import { CircleProgressBar } from './../components/circle-progress-bar/circle-progress-bar';
 import { HttpModule } from '@angular/http';
@@ -26,7 +29,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     IconChooser,
     CircleProgressBar,
-    PlayerSelector
+    PlayerSelector,
+    IconControls,
+    IconText,
+    IconEngine
   ],
   imports: [
     BrowserModule,
@@ -41,10 +47,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    IconChooser,
-    CircleProgressBar,
-    PlayerSelector
+    TabsPage
   ],
   providers: [
     StatusBar,

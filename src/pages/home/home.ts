@@ -1,3 +1,4 @@
+import { IconEngineConfiguration } from './../../components/icon-engine/icon-engine-configuration';
 import { Game } from './../game/game';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -7,6 +8,8 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+  public iconConfiguration: IconEngineConfiguration;
 
   constructor(public navCtrl: NavController) {
 

@@ -14,7 +14,6 @@ export class SymbolService {
 
     debugger;
 
-
     public get currentSymbol() {
         return this.current;
     }
@@ -24,7 +23,7 @@ export class SymbolService {
     constructor(private sanitizer: DomSanitizer, private http: Http) {
     }
 
-    public load() : Promise<any> {
+    public load(): Promise<any> {
         return this.http.get('assets/icons/icons.json').toPromise().then(x => {
             this.icons = x.json();
             return x.json();
@@ -40,6 +39,7 @@ export class SymbolService {
 
     public prev() {
         this.current = this.history.pop();
+        this.emitSvgSymbol();
     }
 
     private emitCurrent(svgSymbol: SafeHtml) {
