@@ -12,15 +12,11 @@ import { Component, Input } from '@angular/core';
   templateUrl: 'icon-engine.html'
 })
 export class IconEngine {
-
-  text: string;
-
   @Input()
-  public configuration: IconEngineConfiguration;
+  public configuration: IconEngineConfiguration = {} as IconEngineConfiguration;
 
   constructor() {
     console.log('Hello IconEngine Component');
-    this.text = 'Hello World';
   }
 
 }

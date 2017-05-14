@@ -9,7 +9,11 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  public iconConfiguration: IconEngineConfiguration;
+  public iconConfiguration: IconEngineConfiguration = {
+    nextIcon: true,
+    previousIcon: true,
+    showText: true
+  } as IconEngineConfiguration;
 
   constructor(public navCtrl: NavController) {
 

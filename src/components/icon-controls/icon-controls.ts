@@ -1,5 +1,5 @@
 import { SymbolService } from './../../services/symbol.service';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the IconControls component.
@@ -13,13 +13,14 @@ import { Component } from '@angular/core';
 })
 export class IconControls {
 
-  text: string;
+  @Input()
+  public nextButton: boolean;
+
+  @Input()
+  public prevButton: boolean;
 
   constructor(private symbolService: SymbolService) {
     console.log('Hello IconControls Component');
-    this.text = 'Hello World';
-
-    this.symbolService.onChange.subscribe(symbol => { this.text = symbol.Tags; });
   }
 
   public next() {

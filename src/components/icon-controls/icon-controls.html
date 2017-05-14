@@ -6,7 +6,7 @@
      transform="translate(0,-698.0315)">
     <g
        id="nextButton"
-
+       *ngIf="nextButton"
      (click)="next()"
        transform="matrix(0,-0.05859375,0.05859375,0,268.99999,889.7908)">
       <path
@@ -24,6 +24,7 @@
     </g>
     <g
        id="prevButton"
+       *ngIf="prevButton"
        (click)="previous()"
        transform="matrix(0.05859375,0,0,0.05859375,56.142856,859.07651)">
       <path
