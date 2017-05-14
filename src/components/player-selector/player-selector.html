@@ -2,12 +2,12 @@
 <div>
     <svg viewBox="-1 -1 2 2" style="transform: rotate(-90deg)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
-                <path *ngFor="let player of players" [attr.d]="player.pathInner" [attr.fill]="player.color" [id]="player.name + 'Inner'"></path>
-                <path *ngFor="let player of players" [attr.d]="player.pathOuter" [attr.fill]="shadeBlend(0.5,player.color)" [id]="player.name + 'Outer'"></path>
+                <path *ngFor="let player of playersData" [attr.d]="player.pathInner" [attr.fill]="player.color" [id]="player.name + 'Inner'"></path>
+                <path *ngFor="let player of playersData" [attr.d]="player.pathOuter" [attr.fill]="shadeBlend(0.5,player.color)" [id]="player.name + 'Outer'"></path>
             </defs>
-            <use *ngFor="let player of players" [attr.xlink:href]="'#'+player.name + 'Outer'"/>
-            <use *ngFor="let player of players" [attr.xlink:href]="'#'+player.name + 'Inner'"/>
-            <text *ngFor="let player of players" font-family="Verdana" font-size="0.1">
+            <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.name + 'Outer'"/>
+            <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.name + 'Inner'"/>
+            <text *ngFor="let player of playersData" font-family="Verdana" font-size="0.1">
               <textPath [attr.xlink:href]="'#'+player.name + 'Inner'" startOffset="25%" style="text-anchor: middle;">
                 {{player.name}}
               </textPath>

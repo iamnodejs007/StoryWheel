@@ -1,6 +1,5 @@
 import { IconEngine } from './../components/icon-engine/icon-engine';
 import { IconText } from './../components/icon-text/icon-text';
-import { SymbolDetail } from './../models/symbol-detail';
 import { IconControls } from './../components/icon-controls/icon-controls';
 import { PlayerSelector } from './../components/player-selector/player-selector';
 import { CircleProgressBar } from './../components/circle-progress-bar/circle-progress-bar';

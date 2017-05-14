@@ -1,3 +1,4 @@
+import { PlayerConfig } from './../icon-engine/icon-engine-configuration';
 import { Component, Input } from '@angular/core';
 
 /**
@@ -12,57 +13,52 @@ import { Component, Input } from '@angular/core';
 })
 export class PlayerSelector {
 
-  public test:string = 'aa';
-
   @Input()
-  public players: Player[] = [
-    {
-      name: 'Adrian',
-      percent: 0.4,
-      color: '#FF0000'
-    },
-    {
-      name: 'Monika',
-      percent: 0.3,
-      color: '#00CC00'
-    },
-    {
-      name: 'Mikołaj',
-      percent: 0.3,
-      color: '#0000FF'
-    }
-  ];
+  public players: PlayerConfig[] = [];
+
+  public playersData: Player[] = [];
   private radius1: number = 1;
   private radius2: number = 0.9;
   private radius3: number = 0.9;
 
-  private cumulativePercent = 0;
+  private playerColors: string[] = [
+    '#FF0000',
+    '#00CC00',
+    '#0000FF'
+  ];
 
-  constructor() {
+  // constructor() {
+  //   this.setupPlayers();
+  // }
 
+  ngOnInit() {
+    let percent = 1.0 / this.players.length;
+    let cumulativePercent = 0;
+    this.playersData = this.players.map((player, index) => {
+      let result: Player = {
+        name: player.name,
+        percent: percent,
+        color: this.playerColors[index],
+        pathOuter: this.createPath(cumulativePercent,
+          percent,
+          this.radius1, this.radius2),
+        pathInner: this.createPath(cumulativePercent,
+          percent,
+          this.radius2, this.radius3),
+          player: player
+      };
 
-    this.setupPlayers();
-    //this.test = this.createPath(0, 50, 0.8, 0.7);
-  }
+      cumulativePercent += percent;
 
-  private setupPlayers() {
-    this.players.forEach(player => {
-      player.pathOuter = this.createPath(this.cumulativePercent,
-        player.percent,
-        this.radius1, this.radius2);
-      player.pathInner = this.createPath(this.cumulativePercent,    
-        player.percent,
-        this.radius2, this.radius3);
-
-      this.cumulativePercent += player.percent;
+      return result;
     });
   }
 
   private createPath(cumulativePercent: number, percent: number, radius: number, innerRadius: number): string {
     // destructuring assignment sets the two variables at once
-    const [startX, startY] = this.getCoordinatesForPercent(this.cumulativePercent);
+    const [startX, startY] = this.getCoordinatesForPercent(cumulativePercent);
 
-    const [endX, endY] = this.getCoordinatesForPercent(this.cumulativePercent + percent);
+    const [endX, endY] = this.getCoordinatesForPercent(cumulativePercent + percent);
 
     // if the slice is more than 50%, take the large arc (the long way around)
     const largeArcFlag = percent > .5 ? 1 : 0;
@@ -101,4 +97,5 @@ class Player {
   pathInner?: string;
   pathOuter?: string;
   color: string;
+  player: PlayerConfig;
 }

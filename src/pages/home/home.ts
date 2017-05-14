@@ -12,7 +12,18 @@ export class HomePage {
   public iconConfiguration: IconEngineConfiguration = {
     nextIcon: true,
     previousIcon: true,
-    showText: true
+    showText: true,
+    players: [
+    {
+      name: 'Adrian'
+    },
+    {
+      name: 'Monika'
+    },
+    {
+      name: 'Mikołaj'
+    }
+  ]
   } as IconEngineConfiguration;
 
   constructor(public navCtrl: NavController) {
