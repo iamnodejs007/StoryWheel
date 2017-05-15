@@ -57,6 +57,10 @@ export class PlayerSelector {
     });
   }
 
+  public log() {
+    console.log('player');
+  }
+
   public playerSelect(player: Player) {
     this.playerClick.emit(player.player);
   }

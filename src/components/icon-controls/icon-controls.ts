@@ -34,4 +34,9 @@ export class IconControls {
     this.symbolService.prev();
   }
 
+  public log(event: Event) {
+    console.log('control');
+    return true;
+  }
+
 }
