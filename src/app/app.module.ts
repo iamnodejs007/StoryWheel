@@ -1,6 +1,5 @@
 import { IconEngine } from './../components/icon-engine/icon-engine';
 import { IconText } from './../components/icon-text/icon-text';
-import { IconControls } from './../components/icon-controls/icon-controls';
 import { PlayerSelector } from './../components/player-selector/player-selector';
 import { CircleProgressBar } from './../components/circle-progress-bar/circle-progress-bar';
 import { HttpModule } from '@angular/http';
@@ -29,7 +28,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     IconChooser,
     CircleProgressBar,
     PlayerSelector,
-    IconControls,
     IconText,
     IconEngine
   ],

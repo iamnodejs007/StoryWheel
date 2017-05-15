@@ -4,8 +4,6 @@
         <icon-chooser></icon-chooser>
         <circle-progress-bar></circle-progress-bar>
         <icon-text *ngIf="configuration.showText"></icon-text>
-        <player-selector [players]="configuration.players" (playerClick)="configuration.playerClick($event)"></player-selector>
-
-        <icon-controls [nextButton]="configuration.nextIcon" [prevButton]="configuration.previousIcon"></icon-controls>
+        <player-selector [players]="configuration.players" (playerClick)="configuration.playerClick($event)" [nextButton]="configuration.nextIcon" [prevButton]="configuration.previousIcon"></player-selector>
     </div>
 </div>

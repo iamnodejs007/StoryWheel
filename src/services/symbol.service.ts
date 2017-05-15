@@ -38,6 +38,8 @@ export class SymbolService {
     }
 
     public prev() {
+        if (this.history.length == 1)
+            return;
         this.current = this.history.pop();
         this.emitSvgSymbol();
     }
@@ -48,7 +50,9 @@ export class SymbolService {
         this.onChange.emit({
             Symbol: svgSymbol,
             Tags: this.current.Tags
-        })
+        });
+
+        console.log(this.history);
     }
 
     private emitSvgSymbol() {

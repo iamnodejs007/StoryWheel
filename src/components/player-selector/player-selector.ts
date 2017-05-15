@@ -1,3 +1,4 @@
+import { SymbolService } from './../../services/symbol.service';
 import { PlayerConfig } from './../icon-engine/icon-engine-configuration';
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 
@@ -19,6 +20,12 @@ export class PlayerSelector {
   @Output()
   public playerClick: EventEmitter<PlayerConfig> = new EventEmitter<PlayerConfig>();
 
+  @Input()
+  public nextButton: boolean;
+
+  @Input()
+  public prevButton: boolean;
+
   public playersData: Player[] = [];
   private radius1: number = 1;
   private radius2: number = 0.9;
@@ -30,9 +37,8 @@ export class PlayerSelector {
     '#0000FF'
   ];
 
-  // constructor() {
-  //   this.setupPlayers();
-  // }
+  constructor(private symbolService: SymbolService) {
+  }
 
   ngOnInit() {
     let percent = 1.0 / this.players.length;
@@ -48,7 +54,7 @@ export class PlayerSelector {
         pathInner: this.createPath(cumulativePercent,
           percent,
           this.radius2, this.radius3),
-          player: player
+        player: player
       };
 
       cumulativePercent += percent;
@@ -98,6 +104,17 @@ export class PlayerSelector {
       let f = w(c0.slice(1), 16), t = w((c1 ? c1 : p < 0 ? "#000000" : "#FFFFFF").slice(1), 16), R1 = f >> 16, G1 = f >> 8 & 0x00FF, B1 = f & 0x0000FF;
       return "#" + (0x1000000 + (u(((t >> 16) - R1) * n) + R1) * 0x10000 + (u(((t >> 8 & 0x00FF) - G1) * n) + G1) * 0x100 + (u(((t & 0x0000FF) - B1) * n) + B1)).toString(16).slice(1)
     }
+  }
+
+  public next() {
+    console.log('Next');
+    this.symbolService.next();
+    console.log(this.symbolService.currentSymbol.Tags);
+  }
+
+  public previous() {
+    console.log("Prev");
+    this.symbolService.prev();
   }
 
 }
