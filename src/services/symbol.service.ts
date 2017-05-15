@@ -51,8 +51,6 @@ export class SymbolService {
             Symbol: svgSymbol,
             Tags: this.current.Tags
         });
-
-        console.log(this.history);
     }
 
     private emitSvgSymbol() {

@@ -12,22 +12,23 @@ export class HomePage {
   public iconConfiguration: IconEngineConfiguration = {
     nextIcon: true,
     previousIcon: true,
-    showText: true,
+    showText: false,
     players: [
-    {
-      name: 'Adrian'
-    },
-    {
-      name: 'Monika'
-    },
-    {
-      name: 'Mikołaj'
-    }
-  ]
+      {
+        name: 'Adrian'
+      },
+      {
+        name: 'Monika'
+      },
+      {
+        name: 'Mikołaj'
+      }
+    ],
+    turnTime: 10000,
+    playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
   } as IconEngineConfiguration;
 
   constructor(public navCtrl: NavController) {
-    this.iconConfiguration.playerClick = (aa: PlayerConfig) => { console.log('player click ' + aa.name);}
   }
 
   public startGame() {

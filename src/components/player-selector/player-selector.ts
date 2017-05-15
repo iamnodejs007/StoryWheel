@@ -63,10 +63,6 @@ export class PlayerSelector {
     });
   }
 
-  public log() {
-    console.log('player');
-  }
-
   public playerSelect(player: Player) {
     this.playerClick.emit(player.player);
   }
@@ -107,13 +103,10 @@ export class PlayerSelector {
   }
 
   public next() {
-    console.log('Next');
     this.symbolService.next();
-    console.log(this.symbolService.currentSymbol.Tags);
   }
 
   public previous() {
-    console.log("Prev");
     this.symbolService.prev();
   }
 

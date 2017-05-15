@@ -24,9 +24,9 @@ export class IconChooser {
 
     this.symbolService.load().then(x => this.symbolService.next());
 
-    setInterval(x => {
-      this.symbolService.next();
-    }, 2000);
+    // setInterval(x => {
+    //   this.symbolService.next();
+    // }, 2000);
   }
 
   private showIcon(symbol: SymbolDetail): void {

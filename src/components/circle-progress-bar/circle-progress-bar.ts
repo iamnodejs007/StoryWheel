@@ -1,3 +1,4 @@
+import { SymbolService } from './../../services/symbol.service';
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 /**
@@ -12,28 +13,47 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 })
 export class CircleProgressBar {
 
-  @Output() percentChange = new EventEmitter();
+  @Output() percentChange:EventEmitter<number> = new EventEmitter<number>();
 
-  @Input()
   get percent(): number {
     return this.percentValue;
   }
   set percent(val) {
     this.percentValue = val;
     this.percentChange.emit(this.percentValue);
+    this.percentChanged();
   }
+
+  @Input()
+  public turnTime: number;
  
-  private percentValue: number = 20;
+  private percentValue: number = 0;
   public barR: number = 0.8;
   public strokeWidth: number = 0.2;
   public barStrokeDashoffset: number = 0;
+  public readonly animation: string = "stroke-dashoffset 0.1s linear";
+  public animationStyle: string = this.animation;
 
-  constructor() {
+
+  private startTime: number = performance.now();
+
+  constructor(private symbolService: SymbolService) {
+    this.percent = 0;
 
     setInterval(x => {
-      this.percent = (this.percent + 1) % 100;
+      let currentTime = performance.now();
+      if (currentTime - this.startTime >= this.turnTime) {
+        this.startTime = performance.now();
+        this.animationStyle = "";
+
+        this.symbolService.next();
+      } else {
+        this.animationStyle = this.animation;
+      }
+      this.percent = (currentTime - this.startTime) / this.turnTime * 100;
       this.percentChanged();
-    }, 500);
+      this.percentChange.emit(this.percent);
+    }, 100);
   }
 
 
