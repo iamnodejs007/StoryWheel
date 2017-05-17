@@ -1,7 +1,9 @@
+import { MultiPlayerPage } from './../multi-player/multi-player';
 import { IconEngineConfiguration, PlayerConfig } from './../../components/icon-engine/icon-engine-configuration';
 import { Game } from './../game/game';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { SinglePlayerPage } from "../single-player/single-player";
 
 @Component({
   selector: 'page-home',
@@ -33,6 +35,14 @@ export class HomePage {
 
   public startGame() {
     this.navCtrl.push(Game);
+  }
+
+  public singlePlayer() {
+    this.navCtrl.push(SinglePlayerPage);
+  }
+
+  public multiPlayer() {
+    this.navCtrl.push(MultiPlayerPage);
   }
 
 }

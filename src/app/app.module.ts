@@ -17,6 +17,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SinglePlayerPage } from "../pages/single-player/single-player";
+import { MultiPlayerPage } from "../pages/multi-player/multi-player";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SinglePlayerPage,
+    MultiPlayerPage
   ],
   providers: [
     StatusBar,
