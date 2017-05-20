@@ -36,11 +36,17 @@ export class CircleProgressBar {
 
 
   private startTime: number = performance.now();
+  private timer: number;
 
   constructor(private symbolService: SymbolService) {
+  }
+  
+  ngOnInit() {
+    this.animationStyle = "";
     this.percent = 0;
+    
 
-    setInterval(x => {
+    this.timer = setInterval(x => {
       let currentTime = performance.now();
       if (currentTime - this.startTime >= this.turnTime) {
         this.startTime = performance.now();
@@ -54,6 +60,10 @@ export class CircleProgressBar {
       this.percentChanged();
       this.percentChange.emit(this.percent);
     }, 100);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.timer);
   }
 
 

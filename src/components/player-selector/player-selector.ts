@@ -41,26 +41,28 @@ export class PlayerSelector {
   }
 
   ngOnInit() {
-    let percent = 1.0 / this.players.length;
-    let cumulativePercent = 0;
-    this.playersData = this.players.map((player, index) => {
-      let result: Player = {
-        name: player.name,
-        percent: percent,
-        color: this.playerColors[index],
-        pathOuter: this.createPath(cumulativePercent,
-          percent,
-          this.radius1, this.radius2),
-        pathInner: this.createPath(cumulativePercent,
-          percent,
-          this.radius2, this.radius3),
-        player: player
-      };
+    if (this.players) {
+      let percent = 1.0 / this.players.length;
+      let cumulativePercent = 0;
+      this.playersData = this.players.map((player, index) => {
+        let result: Player = {
+          name: player.name,
+          percent: percent,
+          color: this.playerColors[index],
+          pathOuter: this.createPath(cumulativePercent,
+            percent,
+            this.radius1, this.radius2),
+          pathInner: this.createPath(cumulativePercent,
+            percent,
+            this.radius2, this.radius3),
+          player: player
+        };
 
-      cumulativePercent += percent;
+        cumulativePercent += percent;
 
-      return result;
-    });
+        return result;
+      });
+    }
   }
 
   public playerSelect(player: Player) {

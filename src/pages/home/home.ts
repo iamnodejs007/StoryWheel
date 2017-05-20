@@ -1,3 +1,4 @@
+import { FreePlayPage } from './../free-play/free-play';
 import { MultiPlayerPage } from './../multi-player/multi-player';
 import { IconEngineConfiguration, PlayerConfig } from './../../components/icon-engine/icon-engine-configuration';
 import { Game } from './../game/game';
@@ -34,15 +35,19 @@ export class HomePage {
   }
 
   public startGame() {
-    this.navCtrl.push(Game);
+    this.navCtrl.push(Game, { animate: true });
   }
 
   public singlePlayer() {
-    this.navCtrl.push(SinglePlayerPage);
+    this.navCtrl.push(SinglePlayerPage, { animate: true });
   }
 
   public multiPlayer() {
-    this.navCtrl.push(MultiPlayerPage);
+    this.navCtrl.push(MultiPlayerPage, { animate: true });
+  }
+
+  public freePlay() {
+    this.navCtrl.push(FreePlayPage, { animate: true });
   }
 
 }

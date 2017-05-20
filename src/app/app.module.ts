@@ -1,3 +1,4 @@
+import { FreePlayPage } from '../pages/free-play/free-play';
 import { SinglePlayerPage } from './../pages/single-player/single-player';
 import { IconEngine } from './../components/icon-engine/icon-engine';
 import { IconText } from './../components/icon-text/icon-text';
@@ -33,7 +34,8 @@ import { MultiPlayerPage } from "../pages/multi-player/multi-player";
     IconText,
     IconEngine,
     SinglePlayerPage,
-    MultiPlayerPage
+    MultiPlayerPage,
+    FreePlayPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,9 @@ import { MultiPlayerPage } from "../pages/multi-player/multi-player";
     HomePage,
     TabsPage,
     SinglePlayerPage,
-    MultiPlayerPage
+    MultiPlayerPage,
+    FreePlayPage
+
   ],
   providers: [
     StatusBar,

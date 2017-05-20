@@ -19,17 +19,6 @@ export class SinglePlayerPage {
     nextIcon: true,
     previousIcon: true,
     showText: false,
-    players: [
-      {
-        name: 'Adrian'
-      },
-      {
-        name: 'Monika'
-      },
-      {
-        name: 'Mikołaj'
-      }
-    ],
     turnTime: 10000,
     playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
   } as IconEngineConfiguration;

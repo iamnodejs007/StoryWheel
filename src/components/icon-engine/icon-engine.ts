@@ -1,5 +1,6 @@
+import { PlayerSelector } from './../player-selector/player-selector';
 import { IconEngineConfiguration } from './icon-engine-configuration';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 
 /**
  * Generated class for the IconEngine component.
@@ -15,8 +16,22 @@ export class IconEngine {
   @Input()
   public configuration: IconEngineConfiguration = {} as IconEngineConfiguration;
 
+  @ViewChild('playerSelector') private playerSelector: PlayerSelector;
+
   constructor() {
     console.log('Hello IconEngine Component');
+  }
+
+  public nextSymbol() {
+    if (this.playerSelector) {
+      this.playerSelector.next();
+    }
+  }
+
+  public previousSymbol() {
+    if (this.playerSelector) {
+      this.playerSelector.previous();
+    }
   }
 
 }
