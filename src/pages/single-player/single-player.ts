@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IconEngineConfiguration, PlayerConfig } from "../../components/icon-engine/icon-engine-configuration";
 
 /**
  * Generated class for the SinglePlayer page.
@@ -13,6 +14,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'single-player.html',
 })
 export class SinglePlayerPage {
+
+  public iconConfiguration: IconEngineConfiguration = {
+    nextIcon: true,
+    previousIcon: true,
+    showText: false,
+    players: [
+      {
+        name: 'Adrian'
+      },
+      {
+        name: 'Monika'
+      },
+      {
+        name: 'Mikołaj'
+      }
+    ],
+    turnTime: 10000,
+    playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
+  } as IconEngineConfiguration;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

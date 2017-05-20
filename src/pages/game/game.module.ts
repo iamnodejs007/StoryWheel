@@ -6,17 +6,13 @@ import { MultiPlayerPage } from "../multi-player/multi-player";
 
 @NgModule({
   declarations: [
-    Game,
-    SinglePlayerPage,
-    MultiPlayerPage
+    Game
   ],
   imports: [
     IonicPageModule.forChild(Game),
   ],
   exports: [
-    Game,
-    SinglePlayerPage,
-    MultiPlayerPage
+    Game
   ]
 })
 export class GameModule {}

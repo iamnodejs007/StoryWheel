@@ -1,3 +1,4 @@
+import { SinglePlayerPage } from './../pages/single-player/single-player';
 import { IconEngine } from './../components/icon-engine/icon-engine';
 import { IconText } from './../components/icon-text/icon-text';
 import { PlayerSelector } from './../components/player-selector/player-selector';
@@ -17,7 +18,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { SinglePlayerPage } from "../pages/single-player/single-player";
 import { MultiPlayerPage } from "../pages/multi-player/multi-player";
 
 @NgModule({
@@ -31,14 +31,17 @@ import { MultiPlayerPage } from "../pages/multi-player/multi-player";
     CircleProgressBar,
     PlayerSelector,
     IconText,
-    IconEngine
+    IconEngine,
+    SinglePlayerPage,
+    MultiPlayerPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     GameModule,
     BrowserModule,
-    HttpModule
+    HttpModule,
+    GameModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

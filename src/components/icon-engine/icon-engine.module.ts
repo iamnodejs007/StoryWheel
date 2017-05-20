@@ -4,7 +4,7 @@ import { IconEngine } from './icon-engine';
 
 @NgModule({
   declarations: [
-    IconEngine,
+    IconEngine
   ],
   imports: [
     IonicPageModule.forChild(IconEngine),
