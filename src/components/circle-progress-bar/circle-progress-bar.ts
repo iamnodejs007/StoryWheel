@@ -1,4 +1,4 @@
-import { SymbolService } from './../../services/symbol.service';
+import { SymbolService, TimeChengeEventData } from './../../services/symbol.service';
 import { Component, Input } from '@angular/core';
 
 /**
@@ -26,8 +26,8 @@ export class CircleProgressBar {
   private timer: number;
 
   constructor(private symbolService: SymbolService) {
-    this.symbolService.percentChange.subscribe(val => {
-      this.percentChanged(val);
+    this.symbolService.timeChange.subscribe((val: TimeChengeEventData) => {
+      this.percentChanged(val.percent);
     });
   }
   

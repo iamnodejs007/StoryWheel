@@ -20,6 +20,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MultiPlayerPage } from "../pages/multi-player/multi-player";
+import { PlayersListPage } from "../pages/players-list/players-list";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MultiPlayerPage } from "../pages/multi-player/multi-player";
     IconEngine,
     SinglePlayerPage,
     MultiPlayerPage,
-    FreePlayPage
+    FreePlayPage,
+    PlayersListPage
   ],
   imports: [
     BrowserModule,
@@ -54,8 +56,8 @@ import { MultiPlayerPage } from "../pages/multi-player/multi-player";
     TabsPage,
     SinglePlayerPage,
     MultiPlayerPage,
-    FreePlayPage
-
+    FreePlayPage,
+    PlayersListPage
   ],
   providers: [
     StatusBar,

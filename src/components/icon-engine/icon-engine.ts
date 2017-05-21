@@ -1,5 +1,4 @@
 import { SymbolService } from './../../services/symbol.service';
-import { CircleProgressBar } from './../circle-progress-bar/circle-progress-bar';
 import { PlayerSelector } from './../player-selector/player-selector';
 import { IconEngineConfiguration } from './icon-engine-configuration';
 import { Component, Input, ViewChild } from '@angular/core';
@@ -26,7 +25,6 @@ export class IconEngine {
 
   public nextSymbol() {
     if (this.playerSelector) {
-      debugger;
       this.playerSelector.next();
     }
   }

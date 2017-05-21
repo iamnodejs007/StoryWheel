@@ -32,10 +32,15 @@ export class MultiPlayerPage {
   } as IconEngineConfiguration;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.iconConfiguration.players = (<MultiPlayerParams>navParams.data).players;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MultiPlayer');
   }
 
+}
+
+export class MultiPlayerParams {
+  public players: PlayerConfig[];
 }

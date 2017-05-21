@@ -1,5 +1,5 @@
+import { PlayersListPage } from './../players-list/players-list';
 import { FreePlayPage } from './../free-play/free-play';
-import { MultiPlayerPage } from './../multi-player/multi-player';
 import { IconEngineConfiguration, PlayerConfig } from './../../components/icon-engine/icon-engine-configuration';
 import { Game } from './../game/game';
 import { Component } from '@angular/core';
@@ -43,7 +43,7 @@ export class HomePage {
   }
 
   public multiPlayer() {
-    this.navCtrl.push(MultiPlayerPage, { animate: true });
+    this.navCtrl.push(PlayersListPage, { animate: true });
   }
 
   public freePlay() {

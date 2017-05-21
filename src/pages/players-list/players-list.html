@@ -1,0 +1,41 @@
+<!--
+  Generated template for the PlayersList page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Define players</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card *ngFor="let player of playerList; let i=index">
+
+        <ion-card-header>
+            Player {{index}}
+            <!--<button right ion-button color="light" (click)="removePlayer(player)">-->
+            <ion-icon name="remove" style="float:right;" (click)="removePlayer(player)"></ion-icon>
+            <!--</button>-->
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-input type="text" placeholder="Name" [(ngModel)]="player.name"></ion-input>
+        </ion-card-content>
+
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <button ion-button color="light" full (click)="addPlayer()">Add</button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+
+<ion-footer>
+    <button ion-button color="success" full (click)="start()">Start game</button>
+</ion-footer>

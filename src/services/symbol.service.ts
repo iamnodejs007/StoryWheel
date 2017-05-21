@@ -19,25 +19,34 @@ export class SymbolService {
     public onChange: EventEmitter<SymbolDetail> = new EventEmitter<SymbolDetail>();
 
     private percentValue: number = 0;
-    public percentChange:EventEmitter<number> = new EventEmitter<number>();
+    private resetTime: boolean = false;
+    private turnTime: number;
 
     get percent(): number {
         return this.percentValue;
     }
     set percent(val) {
         this.percentValue = val;
-        this.percentChange.emit(this.percentValue);
+        this.timeChange.emit(<TimeChengeEventData>{
+            startTime: this.startTime,
+            percent: this.percentValue,
+            resetTime: this.resetTime
+        });
     }
 
     private startTimeValue: number = 0;
-    public startTimeChange:EventEmitter<number> = new EventEmitter<number>();
+    public timeChange: EventEmitter<TimeChengeEventData> = new EventEmitter<TimeChengeEventData>();
 
     get startTime(): number {
         return this.startTimeValue;
     }
     set startTime(val) {
         this.startTimeValue = val;
-        this.startTimeChange.emit(this.startTimeValue);
+        this.timeChange.emit(<TimeChengeEventData>{
+            startTime: this.startTime,
+            percent: this.percentValue,
+            resetTime: this.resetTime
+        });
     }
 
     constructor(private sanitizer: DomSanitizer, private http: Http) {
@@ -63,7 +72,31 @@ export class SymbolService {
             return;
         this.current = this.history.pop();
         this.emitSvgSymbol();
-        this.startTime = performance.now();        
+        this.startTime = performance.now();
+    }
+
+    public startTimer(interval: number): number {
+
+        this.percent = 0;
+
+        let timer = setInterval(x => {
+            let currentTime = performance.now();
+            if (currentTime - this.startTime >= this.turnTime) {
+                this.startTime = performance.now();
+
+                this.resetTime = true;
+
+
+                this.next();
+            }
+            this.percent = (currentTime - this.startTime) / this.turnTime * 100;
+        }, interval);
+
+        return timer;
+    }
+
+    public stopTimer(timer: number) {
+        clearInterval(timer);
     }
 
     private emitCurrent(svgSymbol: SafeHtml) {
@@ -88,4 +121,10 @@ export class SymbolService {
 class IconDetail {
     public FileName: string;
     public Tags: string[];
+}
+
+export class TimeChengeEventData {
+    public startTime: number;
+    public percent: number;
+    public resetTime: boolean = false;
 }
