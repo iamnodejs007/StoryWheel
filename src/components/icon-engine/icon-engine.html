@@ -2,7 +2,7 @@
 <div>
     <div class="visualElements">
         <icon-chooser></icon-chooser>
-        <circle-progress-bar [turnTime]="configuration.turnTime"></circle-progress-bar>
+        <circle-progress-bar #progressBar [turnTime]="configuration.turnTime"></circle-progress-bar>
         <icon-text *ngIf="configuration.showText"></icon-text>
         <player-selector #playerSelector [players]=" configuration.players " (playerClick)="configuration.playerClick($event) " [nextButton]="configuration.nextIcon " [prevButton]="configuration.previousIcon "></player-selector>
     </div>
