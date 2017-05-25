@@ -2,18 +2,18 @@
 <div>
     <svg viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
-                <path *ngFor="let player of playersData" [attr.d]="player.pathInner" [attr.fill]="player.color" [id]="player.name + 'Inner'"></path>
-                <path *ngFor="let player of playersData" [attr.d]="player.pathOuter" [attr.fill]="shadeBlend(0.5,player.color)" [id]="player.name + 'Outer'"></path>
+                <path *ngFor="let player of playersData" [attr.d]="player.pathInner" [attr.fill]="player.color" [id]="player.player.name + 'Inner'"></path>
+                <path *ngFor="let player of playersData" [attr.d]="player.pathOuter" [attr.fill]="shadeBlend(0.5,player.color)" [id]="player.player.name + 'Outer'"></path>
             </defs>
             <g style="transform: rotate(-90deg)" *ngIf="players">
-            <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.name + 'Outer'"
+            <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.player.name + 'Outer'"
             (click)="playerSelect(player)"/>
-            <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.name + 'Inner'"/>
+            <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.player.name + 'Inner'"/>
             <text *ngFor="let player of playersData" 
             (click)="playerSelect(player)"
             font-family="Verdana" font-size="0.1">
-              <textPath [attr.xlink:href]="'#'+player.name + 'Inner'" startOffset="25%" style="text-anchor: middle;">
-                {{player.name}}
+              <textPath [attr.xlink:href]="'#'+player.player.name + 'Inner'" startOffset="25%" style="text-anchor: middle;">
+                {{player.player.name}} ({{player.player.points}})
               </textPath>
           </text>
           </g>

@@ -8,5 +8,12 @@ export class IconEngineConfiguration {
 }
 
 export class PlayerConfig {
+
+    constructor(name: string) {
+        this.name = name;   
+        this.points = 0;     
+    }
+
     public name: string;
+    public points: number = 0;
 }

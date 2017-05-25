@@ -1,3 +1,4 @@
+import { StorageService } from './../../services/storage.service';
 import { MultiPlayerPage, MultiPlayerParams } from './../multi-player/multi-player';
 import { PlayerConfig } from './../../components/icon-engine/icon-engine-configuration';
 import { Component } from '@angular/core';
@@ -17,10 +18,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class PlayersListPage {
 
   public playerList: PlayerConfig[] = [
-    <PlayerConfig>{ name: '' }
+    new PlayerConfig('')
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storageService: StorageService) {
+    let players = storageService.getPlayers();
+    if (players) {
+      this.playerList = players;
+    }
   }
 
   ionViewDidLoad() {
@@ -28,7 +33,7 @@ export class PlayersListPage {
   }
 
   public addPlayer() {
-    this.playerList.push(<PlayerConfig>{ name: '' });
+    this.playerList.push(new PlayerConfig(''));
   }
 
   public removePlayer(player: PlayerConfig) {
@@ -37,7 +42,7 @@ export class PlayersListPage {
   }
 
   public start() {
-    debugger;
+    this.storageService.savePlayers(this.playerList);
     this.navCtrl.push(MultiPlayerPage, <MultiPlayerParams>{ players: this.playerList });
   }
 

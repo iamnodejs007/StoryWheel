@@ -46,7 +46,6 @@ export class PlayerSelector {
       let cumulativePercent = 0;
       this.playersData = this.players.map((player, index) => {
         let result: Player = {
-          name: player.name,
           percent: percent,
           color: this.playerColors[index],
           pathOuter: this.createPath(cumulativePercent,
@@ -66,6 +65,8 @@ export class PlayerSelector {
   }
 
   public playerSelect(player: Player) {
+    player.player.points++;
+    this.symbolService.next();
     this.playerClick.emit(player.player);
   }
 
@@ -115,7 +116,6 @@ export class PlayerSelector {
 }
 
 class Player {
-  name: string;
   percent: number;
   pathInner?: string;
   pathOuter?: string;

@@ -1,3 +1,4 @@
+import { StorageService } from './../services/storage.service';
 import { SymbolService } from './../services/symbol.service';
 import { HomePage } from './../pages/home/home';
 import { Component } from '@angular/core';
@@ -7,7 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 @Component({
   templateUrl: 'app.html',
-  providers: [SymbolService]
+  providers: [SymbolService, StorageService]
 })
 export class MyApp {
   rootPage:any = HomePage;
