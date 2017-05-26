@@ -54,7 +54,8 @@ export class PlayerSelector {
           pathInner: this.createPath(cumulativePercent,
             percent,
             this.radius2, this.radius3),
-          player: player
+          player: player,
+          selected: false
         };
 
         cumulativePercent += percent;
@@ -67,6 +68,8 @@ export class PlayerSelector {
   public playerSelect(player: Player) {
     player.player.points++;
     this.symbolService.next();
+    this.playersData.forEach(x => x.selected = false);
+    player.selected = true;
     this.playerClick.emit(player.player);
   }
 
@@ -121,4 +124,5 @@ class Player {
   pathOuter?: string;
   color: string;
   player: PlayerConfig;
+  selected: boolean = false;
 }

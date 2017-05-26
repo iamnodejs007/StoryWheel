@@ -8,7 +8,7 @@
         <svg viewBox="-1 -1 2 2" id="svg">
             <circle id="back" [attr.r]="barR" cx="0" cy="0" fill="transparent" [attr.stroke-dasharray]="2*3.14*barR" stroke-dashoffset="0"
             [style.stroke-width]="strokeWidth"></circle>
-            <circle id="bar" [attr.r]="barR" cx="0" cy="0" fill="transparent" [attr.stroke-dasharray]="2*3.14*barR" stroke-dashoffset="0" [style.strokeDashoffset]="barStrokeDashoffset"
+            <circle id="bar" [attr.r]="barR" cx="0" cy="0" fill="transparent" [attr.stroke-dasharray]="dasharray" stroke-dashoffset="0" [style.strokeDashoffset]="barStrokeDashoffset"
             [style.stroke-width]="strokeWidth" [style.transition]="animationStyle"></circle>
         </svg>
     </div>

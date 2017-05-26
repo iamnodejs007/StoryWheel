@@ -3,7 +3,7 @@
     <svg viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
                 <path *ngFor="let player of playersData" [attr.d]="player.pathInner" [attr.fill]="player.color" [id]="player.player.name + 'Inner'"></path>
-                <path *ngFor="let player of playersData" [attr.d]="player.pathOuter" [attr.fill]="shadeBlend(0.5,player.color)" [id]="player.player.name + 'Outer'"></path>
+                <path *ngFor="let player of playersData" [attr.d]="player.pathOuter" [attr.fill]="shadeBlend(player.selected ? 0 : 0.5,player.color)" [id]="player.player.name + 'Outer'" style="    transition: fill 0.5s ease;"></path>
             </defs>
             <g style="transform: rotate(-90deg)" *ngIf="players">
             <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.player.name + 'Outer'"

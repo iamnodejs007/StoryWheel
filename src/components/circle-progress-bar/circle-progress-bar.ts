@@ -22,6 +22,7 @@ export class CircleProgressBar {
   public barStrokeDashoffset: number = 0;
   public readonly animation: string = "stroke-dashoffset 0.1s linear";
   public animationStyle: string = this.animation;
+  public dasharray: number = 2*Math.PI*this.barR;
 
   private timer: number;
 
