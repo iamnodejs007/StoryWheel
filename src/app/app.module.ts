@@ -1,3 +1,4 @@
+import { AnimatedTheme } from './../components/animated-theme/animated-theme';
 import { FreePlayPage } from '../pages/free-play/free-play';
 import { SinglePlayerPage } from './../pages/single-player/single-player';
 import { IconEngine } from './../components/icon-engine/icon-engine';
@@ -37,7 +38,8 @@ import { PlayersListPage } from "../pages/players-list/players-list";
     SinglePlayerPage,
     MultiPlayerPage,
     FreePlayPage,
-    PlayersListPage
+    PlayersListPage,
+    AnimatedTheme
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+animated-theme {
+    background-color: #e5e8c9;
+    background: url('../assets/forest.svg'), #e5e8c9;
+    background-position: 0 bottom;
+    background-repeat: repeat-x;
+    background-size: auto 70%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: animatedBackground 800s linear infinite;
+    @keyframes animatedBackground {
+        from {
+            background-position: 0 bottom;
+        }
+        to {
+            background-position: 1000% bottom;
+        }
+    }
+}
