@@ -2,11 +2,11 @@
     circle {
         stroke-dashoffset: 0;
         //transition: stroke-dashoffset 1s linear;
-        stroke: #666;
+        stroke: $timer-background-color;
         //stroke-width: 1em;
     }
     #bar {
-        stroke: #FF9F1E;
+        stroke: $timer-color;
     }
     .inner {
         stroke-width: 0;

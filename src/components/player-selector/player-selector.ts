@@ -32,9 +32,11 @@ export class PlayerSelector {
   private radius3: number = 0.9;
 
   private playerColors: string[] = [
-    '#FF0000',
-    '#00CC00',
-    '#0000FF'
+    '#CC5803',
+    '#031D44',
+    '#0B6E4F',
+    '#177E89',
+    '#A6C36F'
   ];
 
   constructor(private symbolService: SymbolService) {

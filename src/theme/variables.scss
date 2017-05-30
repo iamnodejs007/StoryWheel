@@ -76,3 +76,10 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+$timer-color: #E3C567;
+$timer-background-color: grey;
+
+ion-content.content-md {
+  background-color: #D7E8F5 !important;
+}
