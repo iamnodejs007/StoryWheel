@@ -33,7 +33,7 @@ export class PlayerSelector {
 
   private playerColors: string[] = [
     '#CC5803',
-    '#031D44',
+    '#33658A',
     '#0B6E4F',
     '#177E89',
     '#A6C36F'
