@@ -2,7 +2,7 @@ page-home {
     .menu {
         display: flex;
         flex-wrap: wrap;
-        align-content: flex-end;
+        align-content: flex-start;
         justify-content: center;
         text-align: center;
         height: 100%;
@@ -15,9 +15,9 @@ page-home {
             background-color: #003E1F;
             color: white;
             border-width: 1px;
-            border-color: #225F3F;
-            width: 50%;
-            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+            border-color: #557d68;
+            width: 60%;
+            //box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
         }
     }
     .menuContent {
