@@ -18,6 +18,11 @@ export class ConfigService {
 
     public load() {
         let config = this.storageService.get<ConfigStoreModel>(this.storageService.configKey);
+        if (!config) {
+            config = {
+                time: 30
+            };
+        }
         this.timeConfig.value = config.time;
     }
 }

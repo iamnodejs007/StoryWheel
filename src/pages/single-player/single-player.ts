@@ -29,7 +29,7 @@ export class SinglePlayerPage {
     console.log('ionViewDidLoad SinglePlayer');
   }
 
-  private showHelp() {
+  public showHelp() {
     let alert = this.alertCtrl.create({
       title: 'Help',
       subTitle: 'Thsi is ...  q',
