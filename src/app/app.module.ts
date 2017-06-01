@@ -1,3 +1,4 @@
+import { ConfigurationPage } from './../pages/configuration/configuration';
 import { AnimatedTheme } from './../components/animated-theme/animated-theme';
 import { FreePlayPage } from '../pages/free-play/free-play';
 import { SinglePlayerPage } from './../pages/single-player/single-player';
@@ -39,7 +40,8 @@ import { PlayersListPage } from "../pages/players-list/players-list";
     MultiPlayerPage,
     FreePlayPage,
     PlayersListPage,
-    AnimatedTheme
+    AnimatedTheme,
+    ConfigurationPage
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ import { PlayersListPage } from "../pages/players-list/players-list";
     SinglePlayerPage,
     MultiPlayerPage,
     FreePlayPage,
-    PlayersListPage
+    PlayersListPage,
+    ConfigurationPage
   ],
   providers: [
     StatusBar,

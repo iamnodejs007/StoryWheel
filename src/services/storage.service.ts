@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 export class StorageService {
 
     private players: PlayerConfig[];
+    public readonly configKey: string = 'config';
 
     constructor() {
 
@@ -19,6 +20,18 @@ export class StorageService {
         let data = localStorage.getItem('storyPlayers');
         if (data) {
             return <PlayerConfig[]>JSON.parse(data);
+        }
+        return null;
+    }
+
+    public save<T>(name: string, players: T) {
+        localStorage.setItem(name, JSON.stringify(players));
+    }
+
+    public get<T>(name: string): T {
+        let data = localStorage.getItem(name);
+        if (data) {
+            return <T>JSON.parse(data);
         }
         return null;
     }
