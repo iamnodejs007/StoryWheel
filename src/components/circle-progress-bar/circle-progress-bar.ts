@@ -45,7 +45,7 @@ export class CircleProgressBar {
 
     this.timer = setInterval(x => {
       let currentTime = performance.now();
-      if (currentTime - this.symbolService.startTime >= this.turnTime) {
+      if (currentTime - this.symbolService.startTime >= (this.turnTime*1000)) {
         this.symbolService.startTime = performance.now();
         // TODO: move it to service
         this.animationStyle = "";
@@ -54,7 +54,7 @@ export class CircleProgressBar {
       } else {
         this.animationStyle = this.animation;
       }
-      this.symbolService.percent = (currentTime - this.symbolService.startTime) / this.turnTime * 100;
+      this.symbolService.percent = (currentTime - this.symbolService.startTime) / (this.turnTime*1000) * 100;
     }, interval);
   }
 

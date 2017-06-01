@@ -27,7 +27,6 @@ export class MultiPlayerPage {
         name: 'Monika'
       }
     ],
-    turnTime: 10000,
     playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
   } as IconEngineConfiguration;
 

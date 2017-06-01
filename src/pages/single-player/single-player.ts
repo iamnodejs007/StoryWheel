@@ -19,7 +19,6 @@ export class SinglePlayerPage {
     nextIcon: true,
     previousIcon: true,
     showText: false,
-    turnTime: 10000,
     playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
   } as IconEngineConfiguration;
 
