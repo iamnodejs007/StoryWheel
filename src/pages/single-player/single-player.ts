@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { IconEngineConfiguration, PlayerConfig } from "../../components/icon-engine/icon-engine-configuration";
 
 /**
@@ -23,11 +23,20 @@ export class SinglePlayerPage {
     playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
   } as IconEngineConfiguration;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SinglePlayer');
+  }
+
+  private showHelp() {
+    let alert = this.alertCtrl.create({
+      title: 'Help',
+      subTitle: 'Thsi is ...  q',
+      buttons: ['Ok']
+    });
+    alert.present();
   }
 
 }
