@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AdMobFree } from '@ionic-native/admob-free';
 
 @Component({
   templateUrl: 'app.html',
-  providers: [SymbolService, StorageService, ConfigService]
+  providers: [SymbolService, StorageService, ConfigService, AdMobFree]
 })
 export class MyApp {
   rootPage:any = HomePage;

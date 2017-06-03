@@ -1,3 +1,4 @@
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { IconEngineConfiguration, PlayerConfig } from "../../components/icon-engine/icon-engine-configuration";
@@ -22,7 +23,24 @@ export class SinglePlayerPage {
     playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
   } as IconEngineConfiguration;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private admobFree: AdMobFree) {
+    const bannerConfig: AdMobFreeBannerConfig = {
+      // add your config here
+      // for the sake of this example we will just use the test config      
+      isTesting: true,
+      autoShow: true
+    };
+    this.admobFree.banner.config(bannerConfig);
+
+    this.admobFree.banner.prepare()
+      .then(() => {
+        alert('ok');
+        // banner Ad is ready
+        // if we set autoShow to false, then we will need to call the show method here
+      })
+      .catch(e => alert(e));
+
+
   }
 
   ionViewDidLoad() {
