@@ -23,6 +23,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MultiPlayerPage } from "../pages/multi-player/multi-player";
 import { PlayersListPage } from "../pages/players-list/players-list";
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '4bf02862'
+  }
+};
+
 
 @NgModule({
   declarations: [
@@ -46,6 +54,7 @@ import { PlayersListPage } from "../pages/players-list/players-list";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    CloudModule.forRoot(cloudSettings),
     GameModule,
     BrowserModule,
     HttpModule,
