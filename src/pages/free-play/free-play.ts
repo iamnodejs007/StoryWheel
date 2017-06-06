@@ -1,7 +1,8 @@
 import { IconEngine } from './../../components/icon-engine/icon-engine';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Platform } from 'ionic-angular';
 import { IconEngineConfiguration } from "../../components/icon-engine/icon-engine-configuration";
+import { AdmobFreeProvider } from "../../providers/admob-free-provider";
 
 /**
  * Generated class for the FreePlay page.
@@ -25,11 +26,17 @@ export class FreePlayPage {
 
   public iconEngine: IconEngine;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private admobFree: AdmobFreeProvider, private platform: Platform) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FreePlay');
+    this.platform.ready().then(() => {
+      this.admobFree.showBanner();
+    });
+  }
+
+  ionViewWillLeave() {
+    this.admobFree.hideBanner();
   }
 
   public next() {

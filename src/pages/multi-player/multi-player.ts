@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Platform } from 'ionic-angular';
 import { IconEngineConfiguration, PlayerConfig } from "../../components/icon-engine/icon-engine-configuration";
+import { AdmobFreeProvider } from "../../providers/admob-free-provider";
 
 /**
  * Generated class for the MultiPlayer page.
@@ -30,12 +31,18 @@ export class MultiPlayerPage {
     playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
   } as IconEngineConfiguration;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private admobFree: AdmobFreeProvider, private platform: Platform) {
     this.iconConfiguration.players = (<MultiPlayerParams>navParams.data).players;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MultiPlayer');
+    this.platform.ready().then(() => {
+      this.admobFree.showBanner();
+    });
+  }
+
+  ionViewWillLeave() {
+    this.admobFree.hideBanner();
   }
 
   public showHelp() {

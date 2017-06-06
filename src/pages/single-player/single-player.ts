@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Platform } from 'ionic-angular';
 import { IconEngineConfiguration, PlayerConfig } from "../../components/icon-engine/icon-engine-configuration";
+import { AdmobFreeProvider } from '../../providers/admob-free-provider';
 
 /**
  * Generated class for the SinglePlayer page.
@@ -22,12 +23,18 @@ export class SinglePlayerPage {
     playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
   } as IconEngineConfiguration;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private admobFree: AdmobFreeProvider, private platform: Platform) {
     
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SinglePlayer');
+    this.platform.ready().then(() => {
+      this.admobFree.showBanner();
+    });
+  }
+
+  ionViewWillLeave() {
+    this.admobFree.hideBanner();
   }
 
   public showHelp() {
@@ -38,5 +45,4 @@ export class SinglePlayerPage {
     });
     alert.present();
   }
-
 }

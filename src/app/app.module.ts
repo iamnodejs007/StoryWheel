@@ -1,3 +1,5 @@
+import { AdMobFree } from '@ionic-native/admob-free';
+import { AdmobFreeProvider } from './../providers/admob-free-provider';
 import { ConfigurationPage } from './../pages/configuration/configuration';
 import { AnimatedTheme } from './../components/animated-theme/animated-theme';
 import { FreePlayPage } from '../pages/free-play/free-play';
@@ -76,7 +78,9 @@ const cloudSettings: CloudSettings = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AdMobFree,
+    AdmobFreeProvider
   ]
 })
 export class AppModule {}
