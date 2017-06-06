@@ -1,6 +1,6 @@
 import { IconEngine } from './../../components/icon-engine/icon-engine';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { IconEngineConfiguration } from "../../components/icon-engine/icon-engine-configuration";
 
 /**
@@ -25,7 +25,7 @@ export class FreePlayPage {
 
   public iconEngine: IconEngine;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -43,6 +43,15 @@ export class FreePlayPage {
     if (this.iconEngine) {
       this.iconEngine.previousSymbol();
     }
+  }
+
+  public showHelp() {
+    let alert = this.alertCtrl.create({
+      title: 'Help',
+      subTitle: 'In this mode you can tell a story and <b>change the sybmol manually</b>, tapping left or right part of screen',
+      buttons: ['Ok']
+    });
+    alert.present();
   }
 
 }
