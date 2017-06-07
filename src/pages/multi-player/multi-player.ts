@@ -9,7 +9,7 @@ import { AdmobFreeProvider } from "../../providers/admob-free-provider";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+//@IonicPage()
 @Component({
   selector: 'page-multi-player',
   templateUrl: 'multi-player.html',
