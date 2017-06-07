@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { ConfigurationPage } from './configuration';
+// import { NgModule } from '@angular/core';
+// import { IonicPageModule } from 'ionic-angular';
+// import { ConfigurationPage } from './configuration';
 
-@NgModule({
-  declarations: [
-    ConfigurationPage,
-  ],
-  imports: [
-    IonicPageModule.forChild(ConfigurationPage),
-  ],
-  exports: [
-    ConfigurationPage
-  ]
-})
-export class ConfigurationModule {}
+// @NgModule({
+//   declarations: [
+//     ConfigurationPage,
+//   ],
+//   imports: [
+//     IonicPageModule.forChild(ConfigurationPage),
+//   ],
+//   exports: [
+//     ConfigurationPage
+//   ]
+// })
+// export class ConfigurationModule {}

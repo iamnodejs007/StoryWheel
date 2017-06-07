@@ -20,7 +20,8 @@ export class SinglePlayerPage {
     nextIcon: true,
     previousIcon: true,
     showText: false,
-    playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
+    playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); },
+    timer: true
   } as IconEngineConfiguration;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private admobFree: AdmobFreeProvider, private platform: Platform) {

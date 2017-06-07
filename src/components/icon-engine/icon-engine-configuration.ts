@@ -4,6 +4,7 @@ export class IconEngineConfiguration {
     public players: PlayerConfig[];
     public showText: boolean;
     public playerClick: (PlayerConfig) => void;
+    public timer: boolean;
 }
 
 export class PlayerConfig {

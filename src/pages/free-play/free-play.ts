@@ -1,6 +1,6 @@
 import { IconEngine } from './../../components/icon-engine/icon-engine';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, Platform } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Platform } from 'ionic-angular';
 import { IconEngineConfiguration } from "../../components/icon-engine/icon-engine-configuration";
 import { AdmobFreeProvider } from "../../providers/admob-free-provider";
 
@@ -10,7 +10,6 @@ import { AdmobFreeProvider } from "../../providers/admob-free-provider";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-free-play',
   templateUrl: 'free-play.html',
@@ -22,6 +21,7 @@ export class FreePlayPage {
     previousIcon: true,
     showText: false,
     //playerClick: (aa: PlayerConfig) => { console.log('player click ' + aa.name); }
+    timer: false
   } as IconEngineConfiguration;
 
   public iconEngine: IconEngine;

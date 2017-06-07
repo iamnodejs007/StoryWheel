@@ -1,17 +1,13 @@
-import { SinglePlayerModule } from './../pages/single-player/single-player.module';
-import { PlayersListModule } from './../pages/players-list/players-list.module';
-import { MultiPlayerModule } from './../pages/multi-player/multi-player.module';
+import { ConfigurationPage } from './../pages/configuration/configuration';
+import { PlayersListPage } from './../pages/players-list/players-list';
+import { FreePlayPage } from './../pages/free-play/free-play';
+import { MultiPlayerPage } from './../pages/multi-player/multi-player';
+import { SinglePlayerPage } from './../pages/single-player/single-player';
+import { IconEngineModule } from './../components/icon-engine/icon-engine.module';
 import { AnimatedThemeModule } from './../components/animated-theme/animated-theme.module';
 import { AdMobFree } from '@ionic-native/admob-free';
 import { AdmobFreeProvider } from './../providers/admob-free-provider';
-import { FreePlayPage } from '../pages/free-play/free-play';
-import { SinglePlayerPage } from './../pages/single-player/single-player';
-import { IconEngine } from './../components/icon-engine/icon-engine';
-import { IconText } from './../components/icon-text/icon-text';
-import { PlayerSelector } from './../components/player-selector/player-selector';
-import { CircleProgressBar } from './../components/circle-progress-bar/circle-progress-bar';
 import { HttpModule } from '@angular/http';
-import { IconChooser } from './../components/icon-chooser/icon-chooser';
 import { GameModule } from './../pages/game/game.module';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,18 +21,14 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { MultiPlayerPage } from "../pages/multi-player/multi-player";
-import { PlayersListPage } from "../pages/players-list/players-list";
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
-import { ConfigurationModule } from "../pages/configuration/configuration.module";
-import { FreePlayModule } from "../pages/free-play/free-play.module";
 
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': '4bf02862'
   }
 };
-
+ 
 
 @NgModule({
   declarations: [
@@ -45,11 +37,11 @@ const cloudSettings: CloudSettings = {
     ContactPage,
     HomePage,
     TabsPage,
-    IconChooser,
-    CircleProgressBar,
-    PlayerSelector,
-    IconText,
-    IconEngine
+    SinglePlayerPage,
+    MultiPlayerPage,
+    FreePlayPage,
+    PlayersListPage,
+    ConfigurationPage
   ],
   imports: [
     BrowserModule,
@@ -58,13 +50,8 @@ const cloudSettings: CloudSettings = {
     GameModule,
     BrowserModule,
     HttpModule,
-    GameModule,
     AnimatedThemeModule,
-    ConfigurationModule,
-    FreePlayModule,
-    MultiPlayerModule,
-    PlayersListModule,
-    SinglePlayerModule
+    IconEngineModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -72,7 +59,12 @@ const cloudSettings: CloudSettings = {
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SinglePlayerPage,
+    MultiPlayerPage,
+    FreePlayPage,
+    PlayersListPage,
+    ConfigurationPage
   ],
   providers: [
     StatusBar,

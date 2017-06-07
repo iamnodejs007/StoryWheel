@@ -15,6 +15,9 @@ export class CircleProgressBar {
 
   @Input()
   public turnTime: number;
+
+  @Input()
+  public timerEnabled: boolean;
  
   
   public barR: number = 0.8;
@@ -42,24 +45,27 @@ export class CircleProgressBar {
 
     this.animationStyle = "";
     this.symbolService.percent = 0;
+    if (this.timerEnabled) {
+      this.timer = setInterval(x => {
+        let currentTime = performance.now();
+        if (currentTime - this.symbolService.startTime >= (this.turnTime*1000)) {
+          this.symbolService.startTime = performance.now();
+          // TODO: move it to service
+          this.animationStyle = "";
 
-    this.timer = setInterval(x => {
-      let currentTime = performance.now();
-      if (currentTime - this.symbolService.startTime >= (this.turnTime*1000)) {
-        this.symbolService.startTime = performance.now();
-        // TODO: move it to service
-        this.animationStyle = "";
-
-        this.symbolService.next();
-      } else {
-        this.animationStyle = this.animation;
-      }
-      this.symbolService.percent = (currentTime - this.symbolService.startTime) / (this.turnTime*1000) * 100;
-    }, interval);
+          this.symbolService.next();
+        } else {
+          this.animationStyle = this.animation;
+        }
+        this.symbolService.percent = (currentTime - this.symbolService.startTime) / (this.turnTime*1000) * 100;
+      }, interval);
+    }
   }
 
   ngOnDestroy() {
-    clearInterval(this.timer);
+    if (this.timerEnabled) {
+      clearInterval(this.timer);
+    }
   }
 
 
