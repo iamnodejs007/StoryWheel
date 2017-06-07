@@ -27,7 +27,7 @@
             <div class="player" *ngFor="let player of playerList; let i=index">
                 <span>{{ i+1 }}.</span>
                 <ion-input type="text" placeholder="Name" [(ngModel)]="player.name"></ion-input>
-                <ion-icon name="remove" style="float:right;" (click)="removePlayer(player)"></ion-icon>
+                <ion-icon name="remove" style="float:right;" (tap)="removePlayer(player)"></ion-icon>
             </div>
             <button ion-button full (click)="addPlayer()" class="roundBtn">
                 <ion-icon name="add"></ion-icon>

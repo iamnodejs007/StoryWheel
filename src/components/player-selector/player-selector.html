@@ -7,10 +7,10 @@
             </defs>
             <g style="transform: rotate(-90deg)" *ngIf="players">
             <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.player.name + 'Outer'"
-            (click)="playerSelect(player)"/>
+            (tap)="playerSelect(player)"/>
             <use *ngFor="let player of playersData" [attr.xlink:href]="'#'+player.player.name + 'Inner'"/>
             <text *ngFor="let player of playersData" 
-            (click)="playerSelect(player)"
+            (tap)="playerSelect(player)"
             font-family="Verdana" font-size="0.1">
               <textPath [attr.xlink:href]="'#'+player.player.name + 'Inner'" startOffset="25%" style="text-anchor: middle;">
                 {{player.player.name}} ({{player.player.points}})
@@ -19,11 +19,11 @@
           </g>
 
           <g id="controls" transform="translate(-1,-1) scale(0.0056444398034606) ">
-    <g id="nextButton" (click)="next()" *ngIf="nextButton" >
+    <g id="nextButton" (tap)="next()" *ngIf="nextButton" >
       <path id="path4157" d="M269 191.76v-30h30v30z" style="opacity:0;fill:#000000"/>
       <path id="path4161" d="M270.276 184.095h14.412v5.096l12.987-12.43-12.987-12.432v5.096h-14.41v14.67z" fill="#000000"/>
     </g>
-    <g id="prevButton" (click)="previous()" *ngIf="prevButton" >
+    <g id="prevButton" (tap)="previous()" *ngIf="prevButton" >
       <path id="path4176" d="M56.143 161.045h30v30h-30z" style="opacity:0;fill:#000000"/>
       <path id="path4180" d="M69.053 165.286c.697 0 1.4.06 2.1.183 4.994.88 8.912 4.798 9.792 9.79.88 4.993-1.46 10.015-5.852 12.55-1.92 1.11-4.057 1.64-6.18 1.615-2.727-.034-5.43-.99-7.614-2.822l1.807-2.154c2.986 2.504 7.205 2.873 10.58.924 3.375-1.948 5.165-5.787 4.49-9.625-.678-3.84-3.673-6.834-7.51-7.51-3.028-.534-6.055.467-8.156 2.57l2.8 2.796h-7.5v-7.5l2.714 2.716c2.25-2.25 5.322-3.534 8.53-3.536z" fill="#000000"/>
     </g>

@@ -1,7 +1,6 @@
+import { AnimatedThemeModule } from './../components/animated-theme/animated-theme.module';
 import { AdMobFree } from '@ionic-native/admob-free';
 import { AdmobFreeProvider } from './../providers/admob-free-provider';
-import { ConfigurationPage } from './../pages/configuration/configuration';
-import { AnimatedTheme } from './../components/animated-theme/animated-theme';
 import { FreePlayPage } from '../pages/free-play/free-play';
 import { SinglePlayerPage } from './../pages/single-player/single-player';
 import { IconEngine } from './../components/icon-engine/icon-engine';
@@ -26,6 +25,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MultiPlayerPage } from "../pages/multi-player/multi-player";
 import { PlayersListPage } from "../pages/players-list/players-list";
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { ConfigurationModule } from "../pages/configuration/configuration.module";
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -49,9 +49,7 @@ const cloudSettings: CloudSettings = {
     SinglePlayerPage,
     MultiPlayerPage,
     FreePlayPage,
-    PlayersListPage,
-    AnimatedTheme,
-    ConfigurationPage
+    PlayersListPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +58,9 @@ const cloudSettings: CloudSettings = {
     GameModule,
     BrowserModule,
     HttpModule,
-    GameModule
+    GameModule,
+    AnimatedThemeModule,
+    ConfigurationModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -72,8 +72,7 @@ const cloudSettings: CloudSettings = {
     SinglePlayerPage,
     MultiPlayerPage,
     FreePlayPage,
-    PlayersListPage,
-    ConfigurationPage
+    PlayersListPage
   ],
   providers: [
     StatusBar,

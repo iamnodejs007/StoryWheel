@@ -21,8 +21,8 @@
     <icon-engine #iconEngine [configuration]="iconConfiguration"></icon-engine>
     <div class="controls">
         <div class="container">
-            <div class="previous" (click)="iconEngine.previousSymbol()"></div>
-            <div class="next" (click)="iconEngine.nextSymbol()"></div>
+            <div class="previous" (tap)="iconEngine.previousSymbol()"></div>
+            <div class="next" (tap)="iconEngine.nextSymbol()"></div>
         </div>
     </div>
 </ion-content>
