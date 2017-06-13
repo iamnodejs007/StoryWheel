@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, Platform } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Platform } from 'ionic-angular';
 import { IconEngineConfiguration, PlayerConfig } from "../../components/icon-engine/icon-engine-configuration";
 import { AdmobFreeProvider } from "../../providers/admob-free-provider";
 

@@ -152,12 +152,12 @@ export class AdmobFreeProvider {
         console.error(err);
       });
     } else {
-      let alert = this.alertCtrl.create({
-        title: 'Banner Ad Error',
-        message: 'The Prepare Banner button needs to be clicked first.',
-        buttons: ['Ok']
-      });
-      alert.present();
+      // let alert = this.alertCtrl.create({
+      //   title: 'Banner Ad Error',
+      //   message: 'The Prepare Banner button needs to be clicked first.',
+      //   buttons: ['Ok']
+      // });
+      // alert.present();
     }
   }
 

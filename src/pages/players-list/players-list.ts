@@ -2,7 +2,7 @@ import { StorageService } from './../../services/storage.service';
 import { MultiPlayerPage, MultiPlayerParams } from './../multi-player/multi-player';
 import { PlayerConfig } from './../../components/icon-engine/icon-engine-configuration';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the PlayersList page.
