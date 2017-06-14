@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "784736177422",
+    "firebase_url": "https://storywheel-6838d.firebaseio.com",
+    "project_id": "storywheel-6838d",
+    "storage_bucket": "storywheel-6838d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784736177422:android:256508d99cba2158",
+        "android_client_info": {
+          "package_name": "com.diwebsity.storywheel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784736177422-mnpuivskbgduo5adh2k58il503lvluj7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG9eZ8pUIYcQ5fHrGmRm3Ni8jYsKBlpBc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

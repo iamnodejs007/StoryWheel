@@ -17,34 +17,33 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="D:\Projekty\GitHub\StoryWheel\play\icon.png"
-   inkscape:export-xdpi="300"
-   inkscape:export-ydpi="300">
+   inkscape:export-filename="C:\H\PROJECTS\GitHub\StoryWheel\play\icon.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient5609">
+       id="linearGradient4145">
       <stop
          style="stop-color:#ffcc00;stop-opacity:1;"
          offset="0"
          id="stop5611" />
       <stop
-         style="stop-color:#ffcc00;stop-opacity:0;"
+         style="stop-color:#ffcc00;stop-opacity:1"
          offset="1"
          id="stop5613" />
     </linearGradient>
     <radialGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient5609"
-       id="radialGradient5615"
+       xlink:href="#linearGradient4145"
+       id="radialGradient4149"
        cx="256"
        cy="796.36218"
        fx="256"
        fy="796.36218"
-       r="219.2717"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.1584111,0.01116818,-0.01123442,1.1652809,-31.606591,-134.48254)" />
+       r="255.39622"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -54,15 +53,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5855728"
-     inkscape:cx="-187.66938"
+     inkscape:cx="-300.44455"
      inkscape:cy="473.98614"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
+     inkscape:window-height="1018"
+     inkscape:window-x="1358"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
@@ -73,7 +72,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -83,7 +82,7 @@
      id="layer1"
      transform="translate(0,-540.36216)">
     <circle
-       style="fill:url(#radialGradient5615);fill-opacity:1;stroke:none;stroke-width:31.60000038;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:url(#radialGradient4149);fill-opacity:1;stroke:none;stroke-width:31.60000038;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4136"
        cx="256"
        cy="796.36218"
