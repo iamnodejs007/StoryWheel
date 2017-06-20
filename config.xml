@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.diwebsity.storywheel" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.diwebsity.storywheel" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Story Wheel</name>
   <description>Storytelling app.</description>
   <author email="contact@diwebsity.com" href="mailto:contact@diwebsity.com">Suvroc</author>

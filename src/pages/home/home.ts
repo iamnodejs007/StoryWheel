@@ -3,7 +3,7 @@ import { PlayersListPage } from './../players-list/players-list';
 import { FreePlayPage } from './../free-play/free-play';
 import { Game } from './../game/game';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { SinglePlayerPage } from "../single-player/single-player";
 
 @Component({
@@ -12,7 +12,7 @@ import { SinglePlayerPage } from "../single-player/single-player";
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
   }
 
   public startGame() {
@@ -33,6 +33,15 @@ export class HomePage {
 
   public configuration() {
     this.navCtrl.push(ConfigurationPage, { animate: true });
+  }
+
+  public showInfo() {
+    let alert = this.alertCtrl.create({
+      title: 'Story Wheel',
+      subTitle: 'Family storytelling application\n\nResources:\nhttp://game-icons.net/ \nhttp://freepik.com/',
+      buttons: ['Ok']
+    });
+    alert.present();
   }
 
 }

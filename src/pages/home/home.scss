@@ -36,4 +36,12 @@ page-home {
             left: -100%;
         }
     }
+    .footer {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        div {
+            color: #accfa8;
+        }
+    }
 }
