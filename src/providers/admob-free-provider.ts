@@ -115,7 +115,7 @@ export class AdmobFreeProvider {
       id: this.admobId.banner,
       overlap: true, // Set the banner overlap the webview, it has bug that need to be fixed.
       // offsetTopBar: true, // For iOS 7 status bar overlap, if this happens, you need to set it to true.
-      isTesting: true,
+      //isTesting: true,
       autoShow: true,
       size: 'BANNER'
     }
