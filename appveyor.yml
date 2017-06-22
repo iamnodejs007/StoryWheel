@@ -9,7 +9,7 @@ install:
   # install modules
   - npm install
   - npm install -g ionic@latest
-  - iponic build android --release
+  - ionic build android --release
 
 # Post-install test scripts.
 test_script:
